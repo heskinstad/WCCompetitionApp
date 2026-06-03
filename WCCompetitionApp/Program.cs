@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RecipeApp.API.Mapper;
 using WCCompetitionApp.API.Data;
+using WCCompetitionApp.API.Endpoints;
 using WCCompetitionApp.API.Models;
 using WCCompetitionApp.API.Repositories;
 
@@ -37,6 +38,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.ConfigureTeams();
+app.ConfigureMatches();
+app.ConfigureGroupPlays();
 
 app.UseAuthorization();
 
